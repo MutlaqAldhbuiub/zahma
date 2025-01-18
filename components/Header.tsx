@@ -33,7 +33,6 @@ const Header = () => {
     { href: '#contact', label: t('nav.contact') },
   ]
 
-  // Don't render until language is loaded to prevent hydration mismatch
   if (!isLoaded) {
     return null
   }
@@ -48,20 +47,18 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="relative w-32 h-8">
-                <Image
-                  src="/logo.svg"
-                  alt="Zahma O La"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </Link>
-          </div>
+        <div className="flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center">
+            <div className="relative w-48 h-12">
+              <Image
+                src="/logo.svg"
+                alt="Zahma O La"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
